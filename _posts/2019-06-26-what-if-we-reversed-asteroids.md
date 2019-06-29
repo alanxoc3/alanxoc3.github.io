@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "What if we Reversed Asteroids?"
+title:  "What if we reversed asteroids?"
 categories: blog
 tags: [pico-8, game]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "A Brand New Blog."
+title:  "A brand new blog."
 categories: blog
 tags: [life, alan]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Efficient Pico-8 Outline."
+title:  "Efficient pico-8 outline."
 categories: blog
 tags: [pico-8, tutorial]
 ---
