@@ -5,7 +5,6 @@ categories: blog
 tags: [share, code, life, git, git-lfs]
 
 gitlfs: https://git-lfs.github.com/
-# todo: link netbook to my brave little netbook article.
 # todo: link to the next git study.
 ---
 The past few days, I dedicated some time to studying about how to use git
@@ -20,7 +19,8 @@ repository](https://github.com/alanxoc3/alanxoc3.github.io), git will still
 store the previous unneeded version in the `.git` folder. Although I probably
 won't edit enough binary files for this to be a big problem, it is still a
 minor problem for a few reasons:
-- Large unused git objects (blobs) will waste space on my little netbook.
+- Large unused git objects (blobs) will waste space on my [little netbook]({%
+  post_url 2019-06-30-a-brave-little-netbook %}).
 - Clone/Push/Pull times could be slower.
 - I wanna know if there is a better way.
 
