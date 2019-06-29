@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "A Brave Little Netbook"
+title:  "A Brave Little Netbook."
 categories: blog
 tags: [netbook, code, life]
 ---
