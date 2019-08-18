@@ -21,14 +21,16 @@ url: "http://alanxoc3.github.io" # the base hostname & protocol for your site, e
 twitter_username: alanxoc3
 github_username:  alanxoc3
 google_analytics: UA-144820267-1
-show_excerpts: true
 
 # Build settings
 markdown: kramdown
 theme: minima
 
 scholar:
-   style: apa
+   style: vancouver-brackets
+   # style: sage-vancouver-brackets
+   bibliography_list_tag: div
+   bibliography_item_tag: div
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

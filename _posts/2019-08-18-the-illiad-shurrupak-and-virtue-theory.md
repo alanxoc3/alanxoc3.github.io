@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "From the Illiad to Shurrupak to Virtue Theory"
+title:  "The Illiad, Shurrupak, and Virtue Theory."
 categories: blog
 tags: [homer, books, shurrupak, kesh, virtue, aristotle]
 ---
@@ -76,7 +76,7 @@ Gods, especially "Akgi", "Nintud" and "Kec". {% cite keshtemple %}
 
 I finished my study with some moral philosophy overview. Watching from Crash
 Course is by no means a primary source (Wikipedia isn't either), but I can
-relay my interpretation of each moral theory here: [6]
+relay my interpretation of each moral theory here: {% cite youtube:virtue %}
 
 - Divine Command Theory: Morality comes from supernatural being(s).
 - Natural Law Theory: Aquinas says God made us with morals, we just need to

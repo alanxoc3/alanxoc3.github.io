@@ -2,7 +2,7 @@
 layout: post
 title:  "A brand new blog."
 categories: blog
-tags: [life, alan]
+tags: [life, blog, alan]
 ---
 Hi internet! It's about time, I am finally starting my blog! I want to share
 many of my life interests here. My posts will will vary between many different things.
