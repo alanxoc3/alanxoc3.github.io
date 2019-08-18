@@ -26,9 +26,9 @@ show_excerpts: true
 # Build settings
 markdown: kramdown
 theme: minima
-plugins:
-  - jekyll-feed
 
+scholar:
+   style: apa
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
