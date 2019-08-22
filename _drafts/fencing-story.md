@@ -13,7 +13,7 @@ BYU-Idaho had a fencing club. Actually, I didn't even know what fencing was. I
 asked him the information about it and showed up there on the first day.
 
 I was very shy at the time, but willing to put myself into situations that I
-felt uncomfortabl in. I enrolled in fencing every semester from Freshman to
+felt uncomfortable in. I enrolled in fencing every semester from Freshman to
 Junior year in college. I never felt like I fit in and Johnathan was my only
 friend the whole time. Johnathan fit in very well though. At the end of the
 first semester fencing tournament, Johnathan almost won it. By the time
