@@ -9,6 +9,7 @@ contributions to the world.
 
 ![Thinking in 杭州.](/res/img/about_me_thinking.jpg)
 
-> "If you have built castles in the air, your work need not be lost; that is
-> where they should be. Now put the foundations under them."
-> -- <cite> Henry David Thoreau </cite>
+{% include quote.html text="
+If you have built castles in the air, your work need not be lost; that is where
+they should be. Now put the foundations under them.
+" cite="Henry David Thoreau" %}

@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Alan Morgan
 email: alanxoc3@gmail.com
-description: Yet Another Dude's Blog
+description: Yet another guy's blog!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://alanxoc3.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: alanxoc3
