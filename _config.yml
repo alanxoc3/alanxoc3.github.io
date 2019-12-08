@@ -22,9 +22,11 @@ twitter_username: alanxoc3
 github_username:  alanxoc3
 google_analytics: UA-144820267-1
 
+plugins:
+  - jekyll-seo-tag
+
 # Build settings
 markdown: kramdown
-theme: minima
 
 scholar:
    style: vancouver-brackets

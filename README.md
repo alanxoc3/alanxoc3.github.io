@@ -12,3 +12,5 @@ to have large files with Github Pages, but also annoying if changes to the
 files are stored. Git-lfs fixes this problem.
 
 Checkout my blog here: [alanxoc3.github.io](https://alanxoc3.github.io)
+
+Social media icons from [here](https://www.iconfinder.com/iconsets/social-icons-grey).
