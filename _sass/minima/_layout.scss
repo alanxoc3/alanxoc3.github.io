@@ -6,6 +6,8 @@
   border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
 
+  min-width: $min-width;
+
   // Positioning context for the mobile navigation icon
   position: relative;
 }
@@ -100,14 +102,13 @@
   }
 }
 
-
-
 /**
  * Site footer
  */
 .site-footer {
   border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
+  min-width: $min-width;
 }
 
 .footer-heading {
@@ -118,6 +119,13 @@
 .social-container {
    display: flex;
    flex-direction: column;
+}
+
+.social-icon {
+   max-width: 30px;
+   max-height: 30px;
+   width: 30px;
+   height: 30px;
 }
 
 .social-list-item {
@@ -133,12 +141,10 @@
 
 .footer-col-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 
   @include relative-font-size(0.9375);
   color: $grey-color;
-  margin-left: -$spacing-unit / 2;
-  @extend %clearfix;
 }
 
 /**
@@ -147,6 +153,7 @@
 .page-content {
   padding: $spacing-unit 0;
   flex: 1;
+  min-width: $min-width;
 }
 
 .page-heading {

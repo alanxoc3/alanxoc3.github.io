@@ -1,11 +1,11 @@
 <div class="social-list-item">
    <a
       class="social-container"
-      href="{{ include.link_beginning }}{{ include.link_end | cgi_escape | escape }}">
+      href="{{ include.link | escape }}">
 
-      <img src="{{ include.image | relative_url }}" alt="Kiwi standing on oval"/>
-      <span>
-         {{ include.title | escape }}
-      </span>
+      <img
+         class="social-icon"
+         src="{{ include.image | relative_url }}"
+         alt="{{include.desc}}"/>
    </a>
 </div>

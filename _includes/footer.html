@@ -1,57 +1,28 @@
-<footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
-
-  <div class="wrapper">
-
-    <div class="footer-col-wrapper">
-     <ul class="contact-list">
-       <li class="p-name">
-         {%- if site.author -%}
-           {{ site.author | escape }}
-         {%- else -%}
-           {{ site.title | escape }}
-         {%- endif -%}
-         </li>
-         {%- if site.email -%}
-         <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-         {%- endif -%}
-     </ul>
-
-      {%
-         include
-         social-item.html
-
+{% capture rss_link %}{{ "/feed.xml" | relative_url }}{% endcapture %}
+<footer class="site-footer">
+   <div class="footer-col-wrapper wrapper">
+      {% include social-item.html
+         desc="github"
          image="/assets/github.svg"
-
-         title=site.github_username
-         link_beginning="https://github.com/"
-         link_end=site.github_username
+         link="https://www.github.com/alanxoc3"
       %}
 
-      {%
-         include
-         social-item.html
-
+      {% include social-item.html
+         desc="twitter"
          image="/assets/twitter.svg"
-
-         title=site.twitter_username
-         link_beginning="https://www.twitter.com/"
-         link_end=site.twitter_username
+         link="https://www.twitter.com/alanxoc3"
       %}
 
-   {%- if site.rss -%}
-   <div class="social-list-item">
-      <a class="social-container" href="{{ 'feed.xml' | relative_url }}">
-         <svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}">
-            </use>
-         </svg>
-         <span>{{ site.rss | escape }}
-         </span>
-      </a>
+      {% include social-item.html
+         desc="email"
+         image="/assets/email.svg"
+         link="mailto:alanxoc3@gmail.com"
+      %}
+
+      {% include social-item.html
+         desc="rss"
+         image="/assets/rss.svg"
+         link=rss_link
+      %}
    </div>
-   {%- endif -%}
-    </div>
-
-  </div>
-
 </footer>

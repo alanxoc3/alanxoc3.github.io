@@ -9,7 +9,9 @@ I remember playing Rock paper as a kid with my brothers. We used modified rules
 though. You can use a gun. Gun can shoot anything, so it can defeat anything.
 Also you can use
 Mario. Mario can jump on anything, so Mario beats everything as well. The
-person who accepts to play the game will usually be the only one who would use one of these secret moves, because that person is the one who actually doesn't want to play the game.
+person who accepts to play the game will usually be the only one who would use
+one of these secret moves, because that person is the one who actually doesn't
+want to play the game.
 
 So the next time someone asks if you want to play this simple game, you can use
 one of these secret moves. "Rock paper scissors, Mario!"
