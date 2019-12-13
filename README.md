@@ -14,3 +14,5 @@ files are stored. Git-lfs fixes this problem.
 Checkout my blog here: [alanxoc3.github.io](https://alanxoc3.github.io)
 
 Social media icons from [here](https://www.iconfinder.com/iconsets/social-icons-grey).
+
+Pico-8 icon vectorized from [lexaloffle](https://www.lexaloffle.com/).

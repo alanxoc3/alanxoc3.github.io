@@ -3,6 +3,7 @@ layout: post
 title:  "Efficient pico-8 outline."
 categories: blog
 tags: [pico-8, tutorial]
+caption: How to make your sprites cool and fast!
 ---
 _I originally put this on the [lexaloffle
 website](https://www.lexaloffle.com/bbs/?tid=32996), but I copied it here to

@@ -1,5 +1,5 @@
 {% capture rss_link %}{{ "/feed.xml" | relative_url }}{% endcapture %}
-<footer class="site-footer">
+<footer class="site-footer header-footer">
    <div class="footer-col-wrapper wrapper">
       {% include social-item.html
          desc="github"
@@ -14,6 +14,12 @@
       %}
 
       {% include social-item.html
+         desc="pico8"
+         image="/assets/pico-8.svg"
+         link="https://www.lexaloffle.com/bbs/?uid=17205"
+      %}
+
+      {% include social-item.html
          desc="email"
          image="/assets/email.svg"
          link="mailto:alanxoc3@gmail.com"
@@ -24,5 +30,6 @@
          image="/assets/rss.svg"
          link=rss_link
       %}
+
    </div>
 </footer>

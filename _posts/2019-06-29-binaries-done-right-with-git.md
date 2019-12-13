@@ -3,7 +3,8 @@ layout: post
 title:  "Binaries done right with git."
 categories: blog
 tags: [share, code, life, git, git-lfs]
-edited: 2019-06-30
+updated: 2019-06-30
+caption: But done wrong with Github pages.
 
 gitlfs: https://git-lfs.github.com/
 # todo: link to the next git study.

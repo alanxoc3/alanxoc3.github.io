@@ -3,9 +3,19 @@ layout: post
 title:  "A brand new blog."
 categories: blog
 tags: [life, blog, alan]
+caption: New blog. No problem!
+updated: 2019-12-12
 ---
+![Thinking in 杭州.](/res/img/about_me_thinking.jpg)
+
+{% include quote.html text="
+If you have built castles in the air, your work need not be lost; that is where
+they should be. Now put the foundations under them.
+" cite="Henry David Thoreau" %}
+
 Hi internet! It's about time, I am finally starting my blog! I want to share
-many of my life interests here. My posts will will vary between many different things.
+many of my life interests here. My posts will will vary between many different
+things.
 
 Some of the things I will definitely post about involve:
 - Programming
@@ -17,6 +27,7 @@ Some of the things I will definitely post about involve:
 - Classic books
 - Interesting Experiences
 - Philosophy
-- And Tutorials
+- Tutorials
 
-See you soon :).
+My hope with this blog is that something here will be helpful to you. Anyways,
+see you soon!

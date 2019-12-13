@@ -3,6 +3,7 @@ layout: post
 title:  "The Illiad, Shurrupak, and Virtue Theory."
 categories: blog
 tags: [homer, books, shurrupak, kesh, virtue, aristotle]
+caption: "You should not steal anything."
 ---
 
 It's the weekend and I had some time with myself today, so I decided to just
