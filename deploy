@@ -1,0 +1,17 @@
+#!/bin/bash
+echo "Switching to dev..."
+git checkout dev
+
+echo "Building..."
+jekyll b
+
+echo "Switching to master..."
+git stash
+git checkout master
+
+echo "Replacing master with new build..."
+ls | grep -v _site | xargs rm -r
+mv _site/* ./
+rmdir _site
+
+echo "Done! You can commit now."
