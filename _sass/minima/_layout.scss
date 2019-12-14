@@ -11,6 +11,11 @@
   position: relative;
 }
 
+.center-child {
+   display: flex;
+   justify-content: center;
+}
+
 .site-title {
   @include relative-font-size(1.625);
   font-weight: 300;

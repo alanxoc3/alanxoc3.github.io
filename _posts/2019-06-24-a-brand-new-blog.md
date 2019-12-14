@@ -6,7 +6,7 @@ tags: [life, blog, alan]
 caption: New blog. No problem!
 updated: 2019-12-12
 ---
-![Thinking in 杭州.](/res/img/about_me_thinking.jpg)
+{% include img.html src="/res/img/about_me_thinking.jpg" %}
 
 {% include quote.html text="
 If you have built castles in the air, your work need not be lost; that is where

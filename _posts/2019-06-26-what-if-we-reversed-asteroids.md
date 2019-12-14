@@ -29,4 +29,4 @@ so maybe I will improve it in the future.
 Without further ado, here it is, an asteroids game where you can control the
 asteroids!
 
-{% include pico8.html id="36443" %}
+{% include pico8.html name="revast" %}

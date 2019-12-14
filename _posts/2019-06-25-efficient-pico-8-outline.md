@@ -18,8 +18,7 @@ sprite to produce an outline effect as shown
 [here](https://gist.github.com/Liquidream/1b419261dc324708f008f24ee6d13d7b). I
 decided to change all the sprites that needed outlines to 10x10 instead of 8x8.
 
-![Spritesheet with 10x10 sprites.](/res/ss/efficient_outline.png)
-
+{% include img.html src="/res/ss/efficient_outline.png" %}
 
 You can see the 10x10 sprites at the bottom right of the graphic. Getting rid
 of the outlining function like this improved my CPU, but wasted sprite space. I
@@ -30,7 +29,6 @@ drawing actual sprites for the outline?
 So that's what I did and I thought I would share. There are two parts to this
 process. The first is generating the rectangles for all your sprites and
 caching them at the beginning of the game.
-
 
 {% highlight lua %}
 -- 175 tokens
@@ -106,14 +104,13 @@ using this method:
 - If a sprite is hollow, then the entire hollow region will be filled with the
   outline color as seen below.
 
-
-![Problem with new outline function.](/res/ss/efficient_outline_moon.png)
+{% include img.html src="/res/ss/efficient_outline_moon.png" %}
 
 The green arrow is the old method, the red arrow is the new function.
 
 Here is a demo of this sprite outline function in action!
 
-{% include pico8.html id="efficient_outline-1" %}
+{% include pico8.html name="efficient_outline" %}
 
 As you can see, drawing 56 outlined sprites with this function saves over 15%
 of CPU usage compared with the old method!
