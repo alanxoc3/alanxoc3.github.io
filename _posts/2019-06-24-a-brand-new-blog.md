@@ -1,9 +1,8 @@
 ---
 layout: post
-title:  "A brand new blog."
-categories: blog
-tags: [life, blog, alan]
+title: A brand new blog.
 caption: New blog. No problem!
+tags: [life, blog]
 updated: 2019-12-12
 ---
 {% include img.html src="/res/img/about_me_thinking.jpg" %}

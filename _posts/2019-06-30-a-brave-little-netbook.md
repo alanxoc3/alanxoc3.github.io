@@ -1,9 +1,8 @@
 ---
 layout: post
-title:  "A brave little netbook."
-categories: blog
-tags: [netbook, code, life]
-caption: "Or a cheap toaster."
+title: A brave little netbook.
+caption: Or a cheap toaster.
+tags: [code, life]
 ---
 I survived most of college and eventually earned my Computer Science degree
 with only a little [ASUS
@@ -55,6 +54,3 @@ unfamiliar.
 Or I could just buy the [newer
 model](https://www.asus.com/us/Laptops/ASUS-Laptop-E203MA/) of it with improved
 specs :D.
-
-_PS: Don't forget to __follow__ or __message__ me below, to keep me being a
-motivated blogger!_

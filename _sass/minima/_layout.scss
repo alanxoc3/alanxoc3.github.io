@@ -11,6 +11,13 @@
   position: relative;
 }
 
+.pico8-iframe {
+   width: $min-width;
+   height: ($min-width * .8);
+   border: none;
+   overflow: hidden;
+}
+
 .center-child {
    display: flex;
    justify-content: center;
