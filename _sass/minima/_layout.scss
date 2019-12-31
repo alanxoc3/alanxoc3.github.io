@@ -11,6 +11,10 @@
   position: relative;
 }
 
+.rounded {
+   border-radius: 5px;
+}
+
 .pico8-iframe {
    width: $min-width;
    height: ($min-width * .8);
