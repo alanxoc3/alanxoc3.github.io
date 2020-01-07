@@ -6,7 +6,7 @@ tags: [story]
 ---
 *I made a story with my girlfriend the other day. And now, I want to share it
 here in my blog! We made the story by taking turns writing a sentence or two.
-This is the story after bit of editing to make it more presentable.*
+This is the story after a bit of editing to make it more presentable.*
 
 It was a dark night long ago, and the little giraffe was all alone. He wanted to drink
 water but he was too scared to go to the river by himself. Then a crocodile
