@@ -68,9 +68,9 @@ Oh wait, no you're not. Remember that you will need to run a `git push
 you just love rewriting history?
 
 __Disclaimer__. Even though the idea of `git-lfs` is cool, after trying to make
-it work for my GitHub blog, I found out that GitHub Pages [doesn't support
-`git-lfs`]({{ page.gitlfsissue }})! I guess I will have
-to revert my hard work and go back to using just plain git for now. I'll edit
-this post if GitHub Pages ever supports `git-lfs`.
+it work for my GitHub blog, I found out that GitHub Pages [doesn't support]({{
+page.gitlfsissue }}) `git-lfs`! I guess I will have to revert my hard work and
+go back to using just plain git for now. I'll edit this post if GitHub Pages
+ever supports `git-lfs`.
 
 That's what I had to share for today.
