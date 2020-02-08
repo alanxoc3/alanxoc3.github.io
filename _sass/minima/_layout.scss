@@ -225,3 +225,8 @@
     }
   }
 }
+
+// Max height for code blocks.
+.highlight {
+  pre { max-height: 500px }
+}
