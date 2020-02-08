@@ -3,6 +3,7 @@ layout: post
 title: "What if we reversed asteroids?"
 caption: "How bad could it be?"
 tags: [pico-8, game]
+modified: 2019-06-26
 ---
 The winter of 2016. Too cold to go outside. Ice and snow everywhere. A poor
 college student. A bored college student. A trapped college student. What can

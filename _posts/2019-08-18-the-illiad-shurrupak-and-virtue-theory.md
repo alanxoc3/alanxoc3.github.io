@@ -3,7 +3,7 @@ layout: post
 title:  The Illiad, Shurrupak, and Virtue Theory.
 tags: [homer, philosophy]
 caption: You should not steal anything.
-updated: 2019-12-14
+modified: 2019-12-14
 ---
 It's the weekend and I had some time with myself today, so I decided to just
 research things. Today I read the first 2 books of "The Illiad", along with

@@ -3,6 +3,7 @@ layout: post
 title: A brave little netbook.
 caption: Or a cheap toaster.
 tags: [code, life]
+modified: 2019-06-30
 ---
 I survived most of college and eventually earned my Computer Science degree
 with only a little [ASUS

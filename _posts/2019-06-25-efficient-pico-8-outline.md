@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Draw more efficient outlines.
-caption: Basically cell-shading in PICO-8
+caption: Basically cell-shading in PICO-8.
 tags: [pico-8, tutorial]
-updated: 2020-02-08
+modified: 2020-02-08
 ---
 "How do I make a sprite have an outline in Pico-8?" I wondered. That question
 lead me to find this
@@ -40,7 +40,7 @@ really ugly. It was at this point that I decided to just draw sprite outlines
 in the sprite sheet itself. It resulted in some 10x10 sprites and looked like
 this:
 
-{% include img.html src="/res/ss/efficient_outline.png" %}
+{% include img.html src="/res/img/efficient_outline.png" %}
 
 ***The upsides:***
 - My program is more efficient.
@@ -67,6 +67,14 @@ complex due to edge cases, but it isn't too bad. You can see it on the
 out the demo here:
 
 {% include pico8.html name="efficient_outline" %}
+
+This algorithm uses 50% less CPU than the first algorithm shared. Besides using
+more tokens, there is another catch. If you study the algorithm, you'll notice
+that crescent and hollow shaped objects will get filled instead of outlined.
+The green arrow below would be the first algorithm, while the red arrow would
+be this rectangle algorithm.
+
+{% include img.html src="/res/img/efficient_outline_moon.png" %}
 
 I am going to be using this in my
 [Zeldo](https://twitter.com/alanxoc3/status/1086413617497423872) game in the

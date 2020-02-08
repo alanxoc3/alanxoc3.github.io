@@ -3,6 +3,7 @@ layout: post
 title: Mr. Crocodile's Pond.
 caption: A giraffe story.
 tags: [story]
+modified: 2020-01-06
 ---
 *I made a story with my girlfriend the other day. And now, I want to share it
 here in my blog! We made the story by taking turns writing a sentence or two.

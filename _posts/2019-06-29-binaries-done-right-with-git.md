@@ -3,7 +3,7 @@ layout: post
 title: Binaries done right with git.
 caption: But done wrong with Github pages.
 tags: [code, git]
-updated: 2019-12-14
+modified: 2019-12-14
 
 # todo: link to the next git study.
 blogrepo: https://github.com/alanxoc3/alanxoc3.github.io

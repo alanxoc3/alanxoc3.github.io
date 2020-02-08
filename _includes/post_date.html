@@ -1,11 +1,4 @@
 <span class="post-meta">
    {%- assign date_format = site.minima.date_format | default: "%Y-%m-%d" -%}
-   <time class="dt-published" datetime="{{ include.date | date_to_xmlschema }}" itemprop="datePublished">
-     {{ include.published | date: date_format }}
-   </time>
-   {%- if include.updated -%}
-   | Updated: <time class="dt-updated" datetime="{{ include.date | date_to_xmlschema }}" itemprop="datePublished">
-     {{ include.updated | date: date_format }}
-   </time>
-   {%- endif -%}
+   <time class="dt-updated" datetime="{{ include.date | date_to_xmlschema }}" itemprop="datePublished">{{ include.modified | date: date_format }}</time>.
 </span>

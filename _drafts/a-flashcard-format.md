@@ -3,7 +3,7 @@ layout: post
 title: A Flashcard Format
 caption: Efficient and nice way to view flashcards.
 tags: [life, blog]
-updated: 2019-12-12
+modified: 2019-12-12
 ---
 
 
