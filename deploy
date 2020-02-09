@@ -6,6 +6,7 @@ git checkout dev
 echo
 echo "Building..."
 jekyll b
+cp README.md _site/
 
 echo
 echo "Switching to master..."
