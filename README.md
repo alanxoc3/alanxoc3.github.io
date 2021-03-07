@@ -6,7 +6,19 @@ my blog now.
 
 Check out the blog here: [alanxoc3.github.io](https://alanxoc3.github.io)
 
+## Running locally
+This will run the website locally:
+```
+bundle exec jekyll serve
+```
+
+To run locally with the drafts included, run this:
+```
+bundle exec jekyll serve --drafts
+```
+
 ## Credits
 Social media icons from [here](https://www.iconfinder.com/iconsets/social-icons-grey).
 
 Pico-8 icon vectorized from [lexaloffle](https://www.lexaloffle.com/).
+
