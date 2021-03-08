@@ -11,7 +11,7 @@ youtube thread. Someone then asked me what the differences are between Kakoune
 and Neovim. I ended up writing a consideral amount of thoughts of the pros and
 cons of Neovim vs Kakoune. So I'll share that in a blog post too!
 
-Kakoune is not for everyone, but here are some of the pros and cons for me:
+Kakoune is not for everyone, but here are some of the pros and cons for me.
 
 # Pros of Kakoune over Neovim
 In my opinion, Kakoune follows the unix philosophy more closely than Neovim
