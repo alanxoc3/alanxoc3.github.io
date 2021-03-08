@@ -1,18 +1,14 @@
 #!/bin/bash
-echo
-echo "Building..."
+echo "-> Building..."
 rm -r _site/
-gemx bundle exec jekyll b
+gemx bundle exec jekyll b -q
 
-echo
-echo "Copy build to docs folder..."
-rm -r docs/
-cp _site/ docs/
+echo "-> Copy build to docs folder..."
+rm -rf docs/
+mv _site/ docs/
 
-echo
-echo "Committing the change..."
+echo "-> Committing the change..."
 git add docs
-git commit -m "Website update on $(date -u --rfc-3339=seconds)"
+git commit -m "Website update on $(date -u --rfc-3339=seconds)." > /dev/null
 
-echo
-echo "Done!"
+echo "-> Done!"
