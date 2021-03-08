@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Kakoune vs Neovim"
+title: Kakoune vs Neovim.
 caption: My migration to Kakoune.
-tags: [code]
+tags: [vim, kak, editor, code]
 modified: 2021-03-07
 ---
 

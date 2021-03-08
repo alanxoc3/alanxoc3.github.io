@@ -9,12 +9,17 @@ Check out the blog here: [alanxoc3.github.io](https://alanxoc3.github.io)
 ## Running locally
 This will run the website locally:
 ```
-bundle exec jekyll serve
+jekyll serve
 ```
 
 To run locally with the drafts included, run this:
 ```
-bundle exec jekyll serve --drafts
+jekyll serve --drafts
+```
+
+And to apply the changes to production, run this:
+```
+./deploy
 ```
 
 ## Credits
