@@ -8,7 +8,7 @@ rm -rf docs/
 mv _site/ docs/
 
 echo "-> Committing the change..."
-git add docs
+git add -f docs # Force add, because that directory is gitignored.
 git commit -m "Website update on $(date -u --rfc-3339=seconds)." > /dev/null
 
 echo "-> Done!"
