@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Draw more efficient outlines.
-caption: Basically cell-shading in PICO-8.
+title: More efficient sprite outlines.
+caption: Improving cpu efficiency in pico-8.
 tags: [pico-8, tutorial]
 modified: 2020-02-08
 ---
