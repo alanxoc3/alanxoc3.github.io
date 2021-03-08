@@ -12,7 +12,7 @@ cp _site/ docs/
 echo
 echo "Committing the change..."
 git add docs
-git commit -m "Website update on $(date)"
+git commit -m "Website update on $(date -u --rfc-3339=seconds)"
 
 echo
 echo "Done!"
