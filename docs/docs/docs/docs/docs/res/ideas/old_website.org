@@ -1,0 +1,540 @@
+Okay, so my goal is to gradually move content from this file into my new blog
+:). Good luck Alan :).
+
+# Alan Morgan - my website.
+#+TITLE: Alan Morgan
+#+AUTHOR: Alan Morgan
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:2 todo:nil date:nil html-postamble:nil
+
+# For css styles.
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="page/htmlize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="page/readtheorg.css"/>
+
+# For Asciinema
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="page/asciinema-player.css" />
+#+HTML:      <script src="page/asciinema-player.js"></script>
+
+# My picture!
+#+NAME: Alan Morgan
+[[./res/pics/alan_portrait.jpg]]
+
+This my personal website for the casual observer. Right now this website is the
+place to organize my life and things I've done. Maybe I'll start a blog one day.
+Who knows.
+
+* About Me
+  
+  I've lived in a few places. I grew up in Virginia then Utah. I started school
+  in Idaho. I was an LDS Volunteer in Alabama. While there, my family moved to
+  California. I went back to School in Idaho. Recently I interned at Clearwater
+  Analytics in Boise. And now I randomly live in China teaching English.
+
+  I am definitely Christian. I love Jesus Christ. If I could be the kind of man
+  he was, then my life would be set.
+
+  My favorite book in the Bible is Mark. Mark's Book was written to convert
+  people to believe a guy called Jesus was the Savior of the world. Mark tells
+  about how Jesus healed the incurable, spontaneously created food for
+  thousands, and cast out demons. Though all that sounds way cool, it is nothing
+  compared to the type of man Jesus was and what he taught.
+
+  #+BEGIN_QUOTE
+  Whosoever will save his life shall lose it. \\
+  But whosoever shall lose his life for my sake and the gospel's shall save it. \\
+  For what shall it profit a man? \\
+  If he shall gain the whole world and lose his own soul. \\
+  -- Jesus Christ, Mark 8:35-36
+  #+END_QUOTE
+
+  That's the way I've been trying to live. That's the type of person I want to be.
+
+* About This Site
+
+  This site is created using Spacemacs and Emacs Org-Mode. The initial theme was
+  the [[https://github.com/fniessen/org-html-themes][readtheorg]] CSS theme, but I changed it a bit. Something about not being
+  dependent on external sites makes me feel nice. [[http://github.com/alanxoc3/alanxoc3.github.io][Here]] is the Github page for
+  the entire website. The website is static and self contained in the
+  repository, no backend for me :).
+
+* Quotes
+  #+BEGIN_QUOTE
+  "I learned this, at least, by my experiment; that if one advances confidently
+  in the direction of his dreams, and endeavors to live the life which he has
+  imagined, he will meet with a success unexpected in common hours. He will put
+  some things behind... and more liberal laws will begin to establish themselves
+  around and within him... and he will live with the license of a higher order
+  of beings. If you have built castles in the air, your work need not be lost;
+  that is where they should be. Now put the foundations under them." \\
+  -- Henry David Thoreau
+  #+END_QUOTE
+
+* Projects
+  Here are some of my projects I have created.
+
+  #+HTML: <hr>
+
+** Concards
+
+   #+HTML: <asciinema-player src="res/cinema/concards.cast" cols="81" rows="20"></asciinema-player>
+
+   #+ATTR_HTML: :class image-link
+   [[https://github.com/alanxoc3/concards][github.com/alanxoc3/concards]]
+    
+   A project in C++ using the famous readline library.
+  
+   The purpose of this project is to turn a simple note file into flashcards. A
+   note file is just plain text. Here is what a sample note file would look
+   like:
+
+   #+BEGIN_EXAMPLE
+## pokemon
+Pikachu
+	Thunder Type
+
+Hitmonchan
+	Fighting Type
+
+Jirachi
+	Not a Pokemon. I'm a Gen Oner!
+   #+END_EXAMPLE
+
+   Then after you use the program, metadata gets added.
+
+   #+BEGIN_EXAMPLE
+## pokemon
+Pikachu
+	Thunder Type
+~~ SM2|4.12.2017|3.12.2017|1|1|0|2.50
+
+Hitmonchan
+	Fighting Type
+~~ SM2|4.12.2017|3.12.2017|1|1|0|2.50
+
+Jirachi
+	Not a Pokemon. I'm a Gen Oner!
+~~ SM2|4.12.2017|3.12.2017|1|1|0|2.50
+   #+END_EXAMPLE
+
+   The file format is very simple:
+
+   #+BEGIN_EXAMPLE
+   - "##" denotes groups, multiple groups are separated by spaces. 
+   - "~~" denotes metadata.
+   - "\t" denotes this line is part of the answer.
+   - Anything other than an empty line is considered a question.
+   - Above the first group in the file, you can set delimiters that are used other than "##", "~~", and "\t".
+   #+END_EXAMPLE
+
+   I like simple things, which is why I aimed for a simple file format. Though I
+   was very proud of this program and spent a lot of time on it, I realized that
+   C++ was a bad choice after the fact. The main reason why is that C++ doesn't
+   allow you to put all your focus on the actual application development. I
+   wanted a compiled language, because I wanted to create something extremely
+   lightweight and quick. But C++ has too much hassle associated with it.
+
+   The coolest and most fun part of this project to me was learning how to work
+   with readline. The C readline library has a terrible documentation, I was
+   left to looking at the source code numerous times. I wanted this application
+   to be cross platform, but I could never get it to work with readline on
+   Windows. So this application works on Linux and probably Mac, though not
+   tested.
+
+   I have since ported this application to Golang and taken it in a somewhat
+   different direction.
+
+** Concards Go
+   #+HTML: <asciinema-player src="res/cinema/concards-go.cast" cols="83" rows="24"></asciinema-player>
+
+   #+ATTR_HTML: :class image-link
+   [[https://github.com/alanxoc3/concards-go][github.com/alanxoc3/concards-go]]
+
+   A notes to flashcard program written in Golang. This project uses a few
+   external Open Source Golang libraries. The program doesn't completely render
+   correctly with the web terminal. That is a problem on my end or the terminal
+   rendering library I'm using for this program.
+
+   The file format changed a bit in this application from the previous C++
+   version.
+
+   Here is a file you may create before running the program.
+
+   #+BEGIN_EXAMPLE
+Hello user, these are the Pokemon I'm struggling with. Good luck.
+Don't we all want to catch them all?
+
+## pokemon
+Pikachu
+	Thunder Type
+
+Hitmonchan
+	Fighting Type
+
+Jirachi
+	Not a Pokemon. I'm a Gen Oner!
+   #+END_EXAMPLE
+
+   Then after concards-go runs on the file, the file looks like this:
+
+   #+BEGIN_EXAMPLE
+Hello user, these are the Pokemon I'm struggling with. Good luck.
+Don't we all want to catch them all?
+
+## pokemon
+Pikachu
+	Thunder Type
+~~ 5-12-2017@00:58, 1, 2.50
+
+Hitmonchan
+	Fighting Type
+~~ 5-12-2017@00:58, 1, 2.50
+
+Jirachi
+	Not a Pokemon. I'm a Gen Oner!
+~~ 5-12-2017@00:58, 1, 2.50
+
+##
+   #+END_EXAMPLE
+
+   Here are a list of improvements over the old C++ version:
+
+   #+BEGIN_EXAMPLE
+   - Simplified metadata.
+   - Ncurses type GUI instead of readline. Better UI.
+   - Ability to Undo and Redo actions.
+   - Cards can be embedded within any file.
+   - Easier to edit cards.
+   - Able to open and review from multiple files at the same time.
+   - Can't change what metadata tags look like.
+   #+END_EXAMPLE
+
+   So far, I think the coolest part of this application was implementing the
+   Undo and Redo support. The application stores all the cards in a giant slice.
+   Every time an action is made, the entire slice is saved so that it can be
+   recalled later. If a card was changed, then the copy slice will keep all the
+   old references of the other cards and only change the reference for the new
+   card.
+
+   I use this program often to review notes I have taken from study and school.
+
+** Jogging Lawrence
+
+   [[./res/pics/demo_lawerence.png]]
+
+   #+ATTR_HTML: :class image-link
+   [[https://github.com/alanxoc3/jogging-lawrence][github.com/alanxoc3/jogging-lawrence]]
+
+   A small Pygame project I made with Matt Smith and Art Aguila at BYU-I.
+
+   Lawrence must dodge the obstacles placed in his path. In addition, he can eat
+   the healthy food to gain points and avoid the unhealthy food so he doesn't
+   lose points. See how far you can run!
+
+   From a technical standpoint, this game could be much better. The obstacles do
+   spawn randomly, but they just spawn randomly. There is no pattern to the
+   obstacles spawning. And all the obstacles spawn when the level loads, so if
+   you get far enough, the game will not produce any more obstacles and you can
+   have an infinite score. This is not ideal because with spawning buffers, the
+   game could theoretically use up less CPU usage and go on forever.
+
+   It is cool that this game was made with Python, but that also limits
+   portability and the game lags on start-up.
+
+   Music was composed and created by Matt. My brother and I created the
+   character sprites and road. The background image was found on an open game
+   art website. We all contributed towards the code base.
+ 
+* Pico-8
+  One day a guy posted about Pico-8 on the slack forum at my school. Since then,
+  I have become addicted to it. The Pico-8 console is everything that I could
+  ever want. It is so simple, which allows for so much freedom. It forces the
+  programmer to think outside of the box. Pico-8 allows me to focus on creating
+  my game rather than making my game work. I also don't like most modern games.
+  There is something about retro games that makes me feel good inside.
+
+  Though Pico-8 is a retro console with many limitations, I am have been
+  suprised many times at what people have created with it. Now, I don't think I
+  can be suprised any more, because I'm convinced the possibilities are
+  limitless.
+
+  #+HTML: <hr>
+
+** A Christmas Rest
+   #+NAME: Revast Demo
+   [[./res/pics/demo_christmas_rest.gif]]
+
+   #+ATTR_HTML: :class image-link
+   [[https://www.lexaloffle.com/bbs/?pid=47668][lexaloffle.com/bbs/?pid=47668]]
+
+   A game that plays my favorite Christmas Carol, "God Bless You Merry
+   Gentlemen". I made this game for my family. The coolest part was working on
+   separate libraries independently of this project, then merging them into this
+   project. I was able to work on compression and a new text box system.
+
+   I will admit that I rushed the game towards the end. If I have time later,
+   then I will make the code better.
+
+** Revast
+   #+NAME: Revast Demo
+   [[./res/pics/demo_revast.gif]]
+
+   #+ATTR_HTML: :class image-link
+   [[https://www.lexaloffle.com/bbs/?pid=35303][lexaloffle.com/bbs/?pid=35303]]
+
+   A reverse asteroids game.
+
+   So, there was one day that I was very bored. I ended up having a short
+   conversation with a roommate I was living with at the time. It went like
+   this: "Hey, I'm bored. Do you have any cool ideas for a simple game to make?"
+   Then he replied saying, "Blah blah blah... Reverse Asteroids... blah blah."
+   Or at least that is what I remember from it. So I ended up making reverse
+   asteroids.
+
+   The coolest part of this project was making the AI for the ship in the player
+   vs computer mode. Though you can beat the AI pretty easily if you circle the
+   screen, it was still fun to make. The AI for both the ship and the Asteroids
+   are both still pretty hard to beat, especially for a beginner.
+
+   This game is lacking in assets. Maybe I'll pick it up again in the future and
+   give it a better soundtrack. The game is also not fun right now. There are
+   still improvements that should be made in order to make the game fun to play.
+   
+** Game of Life
+   #+NAME: Game of Life Demo
+   [[./res/pics/demo_game-of-life.gif]]
+
+   #+ATTR_HTML: :class image-link
+   [[https://www.lexaloffle.com/bbs/?pid=37868][lexaloffle.com/bbs/?pid=37868]]
+   
+   Conway's Game of Life Simulation.
+
+   It was a normal day at school and we had talked about Conway's Game of Life
+   in my Computational Theory class. Later that day, I was contemplating life.
+   Then I started contemplating Conway's life. Then I started thinking about
+   games and life and making Conway's Game of Life in Pico-8. So that is what I
+   did.
+
+   I did not spend much time on this and there could be many improvements for
+   it. I ran into CPU usage limitations on Pico-8, according to my knowledge at
+   the time. Initially I had each cell in a separate spot in a lua table array,
+   but then I decided to not store an array and just read pixels off the screen.
+   That was easier and different, and I thought it would be a bit faster.
+
+   I also initially wanted to represent the Game of Life on a pixel level with
+   the entire 128x128 screen of Pico-8. This was too intensive on the poor
+   fantasy hardware, so I used a ninth of the area and repeated that 8 more
+   times so the screen wouldn't look so barren.
+
+   There may be ways I'll look into for speeding up the Game of Life.
+   Some of those ideas are: bit manipulation, the new fillp api call, different
+   memory access, different way to store the game board.
+
+** Zeldo
+   #+NAME: Zeldo Demo
+   [[./res/pics/demo_zeldo.gif]]
+
+   #+ATTR_HTML: :class image-link
+   [[https://www.lexaloffle.com/bbs/?pid=39951][lexaloffle.com/bbs/?pid=39951]]
+
+   The Story of Zeldo. A Zeldo game.
+
+   I remixed all the music for this game and I was the sole programmer. My
+   brother created most of the artwork, so I only had to work on a little bit.
+   Another brother of mine helped considerably with the story of the game.
+
+   As part of that story for the game, we had planned it to be a bit longer, but
+   due to space limitations I ended the story earlier than wanted.
+
+   From this game, I learned that because of the limitations of Pico-8, I need
+   control over everything if I am going to make a large game. Every token
+   counts. The notion of a general library in Pico-8 doesn't work if you are
+   making a large enough game. Every game has specific needs, so you can leave
+   things out that may be used in a different game. That way, you conserve your
+   token count.
+
+   I have plans to go through and optimize the project based on things I have
+   learned about the Pico 8 hardware since then. And spending more time thinking
+   about if I really need a feature or not.
+   
+** Logo
+   #+NAME: Logo Demo
+   [[./res/pics/demo_logo.gif]]
+
+   #+ATTR_HTML: :class image-link
+   [[https://github.com/alanxoc3/pico-work][github.com/alanxoc3/pico-work]]
+
+   Of course, every good game needs a logo. But because Pico-8 has mighty fine
+   limitations, I spent a long time trying to cut my logo down in size. Another
+   rule with my logo is that I didn't want it to use up any sprite space. The
+   text/images are stored as characters, with function that can convert each
+   character to a pixel on the screen. I spent lots of time trying to decrease
+   the token count, because I will put this on all my games.
+
+   Because you can't use characters as values in LUA (or at least the Pico-8
+   implementation), it was tricky to figure out a sleek way to transform the
+   characters to values without a bunch of if statements. I ended up stumbling
+   upon another project did something like this on init, so I did the same
+   thing:
+
+   #+BEGIN_EXAMPLE
+   s2x={}
+   for i=1,17 do
+      s2x[ sub("0123456789abcdefx",i,i) ]=i-1
+   end
+   #+END_EXAMPLE
+
+   It is so simple, but sometimes simplicity is ingenuity. There are some pretty
+   cool ways to use tables. Also, this solution beats if statements by far. A
+   string is only 1 token, while minimum token count of an if statement is 3.
+
+** Collision
+   #+NAME: Collision Demo
+   [[./res/pics/demo_collision.gif]]
+
+   #+ATTR_HTML: :class image-link
+   [[https://github.com/alanxoc3/pico-work][github.com/alanxoc3/pico-work]]
+
+   I created a collision engine! There are a couple ways to collide with
+   objects. Those ways include:
+
+   #+BEGIN_EXAMPLE
+   - Staying within a rectangle.
+   - Staying outside a rectangle.
+   - Staying outside rectangles as part of a grid system.
+   #+END_EXAMPLE
+
+   Because there is duplicate logic between the x and y direction, I was able to
+   decrease token count by unifying that logic. This decreases readability, but
+   readability isn't what I'm aiming for.
+
+   My favorite part about this simulation is the way that I am colliding with
+   objects as part of a grid. The grid would be like a tiled map for a game.
+   Though the movement is smooth, only the tiles directly around the character
+   are checked. The engine is only checking what needs to be checked.
+
+   Though this is a library, it can't be used soley as a library, because each
+   game has specific needs. I used this library for Neo Jumper, but Neo Jumper
+   still had specific collision needs that weren't addressed with this library.
+
+** Particles
+   #+NAME: Particles Demo
+   [[./res/pics/demo_particles.gif]]
+
+   #+ATTR_HTML: :class image-link
+   [[https://github.com/alanxoc3/pico-work][github.com/alanxoc3/pico-work]]
+   
+   I had never played with particles until this little demo. Particles always
+   seemed like this impossible mysterious thing that I would never be able to
+   understand. The truth is that I never tried understanding them until here.
+
+   Pico-8 requires you to understand everything about your game, because you
+   need to know about everything if you are to have full control over the code
+   and make it as efficient as possible. So I learned how to do particles. I
+   made these specific particles, because these are the ones I planned on having
+   for the Neo Jumper game.
+
+** Particle Color
+   #+NAME: Particle Color Demo
+   [[./res/pics/demo_part-colors.gif]]
+
+   #+ATTR_HTML: :class image-link
+   [[https://github.com/alanxoc3/pico-work][github.com/alanxoc3/pico-work]]
+   
+   Here is the story for this little simulation:
+
+   I had just made my first particle simulation a day before. It was morning
+   time and I was told that I had to teach English Colors to a Chinese
+   Kindergarten class. I thought a bit. Then I thought it would be pretty easy
+   to transform my particle system into a color particle system!
+
+   So that morning I made the color particle system. I was able to run it on the
+   Smart TV in the kindergarten classroom. Also I couldn't have done it without
+   the binary exporters that Lexalloffle had just released. I couldn't have
+   allowed browser intervention if I was going to be successful with having
+   little children use my Pico-8 simulation.
+
+   All the kids loved it and it turned out to be a success. I shared this
+   program with a few other teachers at my school here.
+
+** Neo Jumper
+   #+NAME: Neo Jumper Demo
+   [[./res/pics/demo_neo-jumper.gif]]
+
+   #+ATTR_HTML: :class image-link
+   [[https://www.lexaloffle.com/bbs/?pid=46456][lexaloffle.com/bbs/?pid=46456]]
+
+   Help the Neo Jumper escape his virtual reality!
+
+   This project started as a "I haven't done any programming for a month or two"
+   project.
+
+   I put a lot of work into the level generation and perfecting the engine.
+   Though Zeldo is a larger game, I feel that I have put much more quality work
+   into this game.
+
+   Making the ducking work with my collision engine was tricky. I was also able
+   to use calculus in this project for when the title screen slowly approaches
+   the start of the level.
+
+   Two of the most fun parts of this project have been the procedural generation
+   of the levels and seeing the character sprites come into place to look like
+   it is a proffessional game.
+
+   This game has the complexity of procedural generation that Jogging Lawerence
+   should have had. Though this project is still unfinished.
+
+** Pin The Nose - Christmas
+   #+NAME: Pin the Nose - Christmas Demo
+   [[./res/pics/demo_pin-nose-christmas.gif]]
+
+   #+ATTR_HTML: :class image-link
+   [[https://www.lexaloffle.com/bbs/?tid=30411][lexaloffle.com/bbs/?tid=30411]]
+
+   Pin the beard on Santa, the nose on Rudolph, or the carrot on Frosty.
+
+   This game was made for a christmas activity. I was told not to make a game
+   for this activity, but of course I didn't listen. There wasn't too much that
+   was really cool about this project. I used the snow from another christmas
+   project I was working on.
+
+   Maybe the coolest part was making a fairly modular system for adding
+   characters to pin the nose.
+
+   If I want to improve this game, then I would:
+   - Add more characters.
+   - Better image qualities.
+   - Fade transitions / color.
+   - More particles for completion.
+   - Arrow key and X/Z input support.
+   - A title screen.
+   - Improve the music.
+
+* Piano
+  A beautiful table of the songs I have composed/transcribed.
+
+  #+ATTR_HTML: :class alignment
+  | Title                | pdf                                           | mp3                                           |
+  |----------------------+-----------------------------------------------+-----------------------------------------------|
+  | Getting Well         | [[./res/sheet/Getting_Well.pdf][pdf]]         | [[./res/piano/Getting_Well.mp3][mp3]]         |
+  | Graveyard Song       | [[./res/sheet/Graveyard_Song.pdf][pdf]]       | [[./res/piano/Graveyard_Song.mp3][mp3]]       |
+  | I Have A Robot       | [[./res/sheet/I_Have_A_Robot.pdf][pdf]]       | [[./res/piano/I_Have_A_Robot.mp3][mp3]]       |
+  | Jogging Lawerence    | [[./res/sheet/Jogging_Lawerence.pdf][pdf]]    | [[./res/piano/Jogging_Lawerence.mp3][mp3]]    |
+  | Memories of the Past | [[./res/sheet/Memories_of_the_Past.pdf][pdf]] | [[./res/piano/Memories_of_the_Past.mp3][mp3]] |
+  | Night Song           | [[./res/sheet/Night_Song.pdf][pdf]]           | [[./res/piano/Night_Song.mp3][mp3]]           |
+  | Samson Song          | [[./res/sheet/Samson_Song.pdf][pdf]]          | [[./res/piano/Samson_Song.mp3][mp3]]          |
+  | Super Table Anthem   | [[./res/sheet/Super_Table_Anthem.pdf][pdf]]   | [[./res/piano/Super_Table_Anthem.mp3][mp3]]   |
+  | Zeldo Overworld      | [[./res/sheet/Zeldo_Overworld.pdf][pdf]]      | [[./res/piano/Zeldo_Overworld.mp3][mp3]]      |
+
+  #+HTML: <hr>
+
+* Spriting
+
+  I've dabbled in Pixel Art for a while, but I'm definitely not an expert. I
+  started [[http://awesometures.blogspot.com/][Awesometures]], which is a blog I
+  created for primarily for Pixel Art in May 2010. My brother has been
+  maintaining it off and on for multiple years now though.
+
+  #+HTML: <hr>
+
+* TODO School
+  #+HTML: <hr>
