@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Binaries done right with git. | Alan Morgan</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Binaries done right with git." />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The past few days, I dedicated some time to studying about how to use git better and how some of the git internals work." />
+<meta property="og:description" content="The past few days, I dedicated some time to studying about how to use git better and how some of the git internals work." />
+<link rel="canonical" href="http://alanxoc3.github.io/2019/06/29/binaries-done-right-with-git.html" />
+<meta property="og:url" content="http://alanxoc3.github.io/2019/06/29/binaries-done-right-with-git.html" />
+<meta property="og:site_name" content="Alan Morgan" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-06-29T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"http://alanxoc3.github.io/2019/06/29/binaries-done-right-with-git.html","description":"The past few days, I dedicated some time to studying about how to use git better and how some of the git internals work.","@type":"BlogPosting","headline":"Binaries done right with git.","dateModified":"2019-06-29T00:00:00-06:00","datePublished":"2019-06-29T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://alanxoc3.github.io/2019/06/29/binaries-done-right-with-git.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/main.css"><link type="application/atom+xml" rel="alternate" href="http://alanxoc3.github.io/feed.xml" title="Alan Morgan" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-144820267-1', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+</head>
+<body><header class="header-footer site-header" role="banner">
+  <div class="title-wrapper wrapper">
+    <a class="site-title" rel="author" href="/">Alan Morgan</a>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+     <div class="post-div"><h1 class="post-title p-name" itemprop="name headline">Binaries done right with git.</h1><p class="excerpt-text">
+       <span class="post-meta"><time class="dt-updated" datetime="" itemprop="datePublished">2019-12-14</time>.
+</span>
+
+       But done wrong with Github pages.
+    </p>
+</div>
+
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>The past few days, I dedicated some time to studying about how to use git
+better and how some of the git internals work.</p>
+
+<p>My study started because of creating this very <a href="http://alanxoc3.github.io">blog</a>. To ease
+the creation of blog posts and maintaining the website, I wanted to store all
+my images in the same GitHub repository. But I knew there is an inherent
+problem with this. Git saves the history of every commit. If I edit and commit
+one of the images contained in my blog’s <a href="https://github.com/alanxoc3/alanxoc3.github.io">GitHub
+repository</a>, git will still
+store the previous unneeded version in the <code class="highlighter-rouge">.git</code> folder. Although I probably
+won’t edit enough binary files for this to be a big problem, it is still a
+minor problem for a few reasons:</p>
+<ul>
+  <li>Large unused git objects (blobs) will waste space on my <a href="/2019/06/30/a-brave-little-netbook.html">little netbook</a>.</li>
+  <li>Clone/Push/Pull times could be slower.</li>
+  <li>I wanna know if there is a better way.</li>
+</ul>
+
+<p>After a few google searches, I came across <a href="https://git-lfs.github.com/"><code class="highlighter-rouge">git-lfs</code></a>. Here
+is the description taken from the website:</p>
+<blockquote>
+  <p>Git Large File Storage (LFS) replaces large files such as audio samples,
+videos, datasets, and graphics with text pointers inside Git, while storing
+the file contents on a remote server like GitHub.com or GitHub Enterprise.</p>
+</blockquote>
+
+<p>Cool! This takes away version control for my large binary files, but keeps them
+in git, for GitHub to accept. That’s exactly what I wanted.</p>
+
+<p>The install is straightforward for <a href="https://www.archlinux.org/packages/community/x86_64/git-lfs/">Arch Linux</a>. After
+installing, it’s really easy to set up for a <strong>brand new repository</strong>. Check
+out the <a href="https://git-lfs.github.com/">website</a> for that.</p>
+
+<p>But wait!!!! <strong>I don’t have a brand new repository.</strong> And my repository already has
+a bunch of binary files. What can I do?</p>
+
+<p>Don’t worry anxious reader, <code class="highlighter-rouge">git-lfs v2.2.1</code> or later makes it really easy to
+migrate a repository! After running a <code class="highlighter-rouge">git lfs install</code> on the repo, use this
+script taken from one of the <a href="https://github.com/git-lfs/git-lfs/wiki/Tutorial#migrating-existing-repository-data-to-lfs">official
+tutorials</a>:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git lfs migrate import <span class="nt">--include</span><span class="o">=</span><span class="s2">"*.png"</span> <span class="se">\</span>
+    <span class="nt">--include-ref</span><span class="o">=</span>refs/heads/master <span class="se">\</span>
+    <span class="nt">--include-ref</span><span class="o">=</span>refs/heads/other_branch</code></pre></figure>
+
+<p>Note: You should replace <code class="highlighter-rouge">png</code> with your file extension of choice (<code class="highlighter-rouge">png</code>, <code class="highlighter-rouge">jpg</code>,
+<code class="highlighter-rouge">mp3</code>, etc). And each <code class="highlighter-rouge">--include-ref</code> line should correspond to each branch on
+your server.</p>
+
+<p>Afterwards, run a <code class="highlighter-rouge">git lfs ls-files</code> to see if your existing files are stored
+by <code class="highlighter-rouge">git-lfs</code>. If they are, then you are good to go my kind sir :).</p>
+
+<p>Oh wait, no you’re not. Remember that you will need to run a <code class="highlighter-rouge">git push
+--force</code>, since you are going to rewrite history on your git host server. Don’t
+you just love rewriting history?</p>
+
+<p><strong>Disclaimer</strong>. Even though the idea of <code class="highlighter-rouge">git-lfs</code> is cool, after trying to make
+it work for my GitHub blog, I found out that GitHub Pages <a href="https://github.com/github/pages-gem/issues/515">doesn’t support</a> <code class="highlighter-rouge">git-lfs</code>! I guess I will have to revert my hard work and
+go back to using just plain git for now. I’ll edit this post if GitHub Pages
+ever supports <code class="highlighter-rouge">git-lfs</code>.</p>
+
+<p>That’s what I had to share for today.</p>
+
+
+    <em>
+       PS: Don’t forget to <strong>follow</strong> or
+       <strong>message</strong> me with one of the icons below to keep me
+       motivated!
+    </em>
+  </div><a class="u-url" href="/2019/06/29/binaries-done-right-with-git.html" hidden></a>
+</article>
+
+      </div>
+    </main>
+<footer class="site-footer header-footer">
+   <div class="footer-col-wrapper wrapper">
+      <div class="social-list-item">
+   <a
+      class="social-container"
+      href="https://www.github.com/alanxoc3">
+
+      <img
+         class="social-icon"
+         src="/res/icons/github.svg"
+         alt="github"/>
+   </a>
+</div>
+
+
+      <div class="social-list-item">
+   <a
+      class="social-container"
+      href="https://www.twitter.com/alanxoc3">
+
+      <img
+         class="social-icon"
+         src="/res/icons/twitter.svg"
+         alt="twitter"/>
+   </a>
+</div>
+
+
+      <div class="social-list-item">
+   <a
+      class="social-container"
+      href="https://www.lexaloffle.com/bbs/?uid=17205">
+
+      <img
+         class="social-icon"
+         src="/res/icons/pico-8.svg"
+         alt="pico8"/>
+   </a>
+</div>
+
+
+      <div class="social-list-item">
+   <a
+      class="social-container"
+      href="mailto:alanxoc3@gmail.com">
+
+      <img
+         class="social-icon"
+         src="/res/icons/email.svg"
+         alt="email"/>
+   </a>
+</div>
+
+
+      <div class="social-list-item">
+   <a
+      class="social-container"
+      href="/feed.xml">
+
+      <img
+         class="social-icon"
+         src="/res/icons/rss.svg"
+         alt="rss"/>
+   </a>
+</div>
+
+
+   </div>
+</footer>
+</body>
+
+</html>
