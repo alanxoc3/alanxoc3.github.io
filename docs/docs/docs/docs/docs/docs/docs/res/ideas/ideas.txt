@@ -1,9 +1,0 @@
-Example categories:
-
-life
-tutorial
-pico-8
-piano
-book
-
-
