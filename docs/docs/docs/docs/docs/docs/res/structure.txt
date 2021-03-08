@@ -1,0 +1,8 @@
+Structure of this res directory:
+chips  - Chiptunes from Pico-8   (.mp3)
+cinema - Asciicinema (.cast)
+gifs   - Pico-8 Gifs (.gif)
+img    - Misc Images (.jpg or .png)
+piano  - Musescore compiled piano pieces (.mp3)
+sheet  - Piano sheets from Musescore (.pdf)
+ss     - Screen shots from anything (.png or .jpg)

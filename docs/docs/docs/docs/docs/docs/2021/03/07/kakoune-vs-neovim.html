@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Kakoune vs Neovim | Alan Morgan</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Kakoune vs Neovim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Yesterday, I mentioned that I started using Kakoune a few months ago in a youtube thread. Someone then asked me what the differences are between Kakoune and Neovim. I ended up writing a consideral amount of thoughts of the pros and cons of Neovim vs Kakoune. So I’ll share that in a blog post too!" />
+<meta property="og:description" content="Yesterday, I mentioned that I started using Kakoune a few months ago in a youtube thread. Someone then asked me what the differences are between Kakoune and Neovim. I ended up writing a consideral amount of thoughts of the pros and cons of Neovim vs Kakoune. So I’ll share that in a blog post too!" />
+<link rel="canonical" href="http://alanxoc3.github.io/2021/03/07/kakoune-vs-neovim.html" />
+<meta property="og:url" content="http://alanxoc3.github.io/2021/03/07/kakoune-vs-neovim.html" />
+<meta property="og:site_name" content="Alan Morgan" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-03-07T00:00:00-07:00" />
+<script type="application/ld+json">
+{"url":"http://alanxoc3.github.io/2021/03/07/kakoune-vs-neovim.html","description":"Yesterday, I mentioned that I started using Kakoune a few months ago in a youtube thread. Someone then asked me what the differences are between Kakoune and Neovim. I ended up writing a consideral amount of thoughts of the pros and cons of Neovim vs Kakoune. So I’ll share that in a blog post too!","@type":"BlogPosting","headline":"Kakoune vs Neovim","dateModified":"2021-03-07T00:00:00-07:00","datePublished":"2021-03-07T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://alanxoc3.github.io/2021/03/07/kakoune-vs-neovim.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/main.css"><link type="application/atom+xml" rel="alternate" href="http://alanxoc3.github.io/feed.xml" title="Alan Morgan" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-144820267-1', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+</head>
+<body><header class="header-footer site-header" role="banner">
+  <div class="title-wrapper wrapper">
+    <a class="site-title" rel="author" href="/">Alan Morgan</a>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+     <div class="post-div"><h1 class="post-title p-name" itemprop="name headline">Kakoune vs Neovim</h1><p class="excerpt-text">
+       <span class="post-meta"><time class="dt-updated" datetime="" itemprop="datePublished">2021-03-07</time>.
+</span>
+
+       My migration to Kakoune.
+    </p>
+</div>
+
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Yesterday, I mentioned that I started using Kakoune a few months ago in a
+youtube thread. Someone then asked me what the differences are between Kakoune
+and Neovim. I ended up writing a consideral amount of thoughts of the pros and
+cons of Neovim vs Kakoune. So I’ll share that in a blog post too!</p>
+
+<p>Kakoune is not for everyone, but here are some of the pros and cons for me:</p>
+
+<h1 id="pros-of-kakoune-over-neovim">Pros of Kakoune over Neovim</h1>
+<p>In my opinion, Kakoune follows the unix philosophy more closely than Neovim
+does. For example, Kakoune doesn’t have multiple windows or floating windows.
+Instead it encourages you to make use of your terminal multiplexer or window
+manager. That can be seen as a drawback, but I see it as a benefit, since it
+encourages more thought &amp; development towards the editor experience.</p>
+
+<p>Kakoune is built with shell integration in mind. One way to demonstrate this is
+that it doesn’t have much of a configuration language. To create any complex
+logic or plugins for Kakoune, you have to write it in another language and
+Kakoune will comunicate with it via environment variables and stdout. This
+encourages people to write programs that can server both as useful unix
+scripting utilities and also Kakoune plugins. I wish other editors followed a
+similar pattern, because that promotes plugin authors to write programs that
+could be useful to other editors or useful for scripting.</p>
+
+<p>Kakoune does multiple cursors instead of visual selection or global search and
+replace. In my experience so far, multiple cursors are much more fun than
+global search and replace. I’m pretty sure they can do everything visual
+selection can do. Plus they can do other cool things, like rotating all text
+multiple cursor selections, which is something I don’t know if other IDE
+multiple cursor implementations can handle. You can also filter through your
+selections, which isn’t really a concept in vim.</p>
+
+<p>Plus there are a bunch of nice small things like:</p>
+<ul>
+  <li>Easy shell integration with the pipe character, instead of the “:%!” thing in vim.</li>
+  <li>Macros default to one register, so just type “q” to playback your macro, instead of “@q”.</li>
+  <li>Modes outside of normal &amp; insert have a menu that shows and describes keybindings. This makes it easy to add documentation for user and plugin keybindings.</li>
+  <li>There is a built in keybinding for inserting a blank line (alt+o). That’s something I had to create myself in Neovim because I noticed I was typing “o<esc>k" too much.</esc></li>
+  <li>Kakoune uses standard regex, instead of vim’s specific regex format that I always forget.</li>
+  <li>Generally, the default editor keybindings in Kakoune are somewhat similar to Neovim’s, but much more thoughtout. Neovim can’t do this, because they aim to be fully compatible with vi/vim out of the box.</li>
+</ul>
+
+<h1 id="pros-of-neovim-over-kakoune">Pros of Neovim over Kakoune</h1>
+<p>Neovim has a lot more plugins than Kakoune, because there are far more users.
+Just looking at stars on github, Neovim has almost 6 times more stars than
+Kakoune. Plugin management is also more difficult with Kakoune, because plugins
+tend to be written in different languages.</p>
+
+<p>Kakoune doesn’t handly formatting or indentation well, at least not out of the
+box. The idea is that you should let an external command help you format things
+that are specific to your file. But that doesn’t apply to every file format.
+Neovim sometimes guesses what tab should do based on context or the file
+format, which sometimes seems magic to me, but it’s usually nice.</p>
+
+<p>Neovim is starting to support treesitter, which Kakoune doesn’t support at all.
+Kakoune’s regex highlighting also doesn’t feel as mature as Neovim’s.</p>
+
+<p>I was also having some problems getting some of Kakoune’s keybindings working
+with terminal emulators on my Macbook. I had to switch from Alacritty to Kitty
+to get this working.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+<p>I really like the philosophy behind Kakoune, which is what intrigued me enough to make
+an editor switch. In practice, Neovim’s large plugin library makes up for the
+less eficient keybindings that Kakoune proposes, but hopefully Kakoune will
+acquire more plugins and features in time.</p>
+
+
+    <em>
+       PS: Don’t forget to <strong>follow</strong> or
+       <strong>message</strong> me with one of the icons below to keep me
+       motivated!
+    </em>
+  </div><a class="u-url" href="/2021/03/07/kakoune-vs-neovim.html" hidden></a>
+</article>
+
+      </div>
+    </main>
+<footer class="site-footer header-footer">
+   <div class="footer-col-wrapper wrapper">
+      <div class="social-list-item">
+   <a
+      class="social-container"
+      href="https://www.github.com/alanxoc3">
+
+      <img
+         class="social-icon"
+         src="/res/icons/github.svg"
+         alt="github"/>
+   </a>
+</div>
+
+
+      <div class="social-list-item">
+   <a
+      class="social-container"
+      href="https://www.twitter.com/alanxoc3">
+
+      <img
+         class="social-icon"
+         src="/res/icons/twitter.svg"
+         alt="twitter"/>
+   </a>
+</div>
+
+
+      <div class="social-list-item">
+   <a
+      class="social-container"
+      href="https://www.lexaloffle.com/bbs/?uid=17205">
+
+      <img
+         class="social-icon"
+         src="/res/icons/pico-8.svg"
+         alt="pico8"/>
+   </a>
+</div>
+
+
+      <div class="social-list-item">
+   <a
+      class="social-container"
+      href="mailto:alanxoc3@gmail.com">
+
+      <img
+         class="social-icon"
+         src="/res/icons/email.svg"
+         alt="email"/>
+   </a>
+</div>
+
+
+      <div class="social-list-item">
+   <a
+      class="social-container"
+      href="/feed.xml">
+
+      <img
+         class="social-icon"
+         src="/res/icons/rss.svg"
+         alt="rss"/>
+   </a>
+</div>
+
+
+   </div>
+</footer>
+</body>
+
+</html>
