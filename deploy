@@ -1,28 +1,18 @@
 #!/bin/bash
-echo "Switching to dev..."
-git stash
-git checkout dev
-
 echo
 echo "Building..."
-jekyll b
-cp README.md _site/
+rm -r _site/
+gemx bundle exec jekyll b
 
 echo
-echo "Switching to master..."
-git stash
-git checkout master
+echo "Copy build to docs folder..."
+rm -r docs/
+cp _site/ docs/
 
 echo
-echo "Replacing master with new build..."
-ls | grep -v _site | xargs rm -r
-mv _site/* ./
-rmdir _site
-
 echo "Committing the change..."
-git add .
-git commit -m "New build on $(date)"
-git checkout dev
+git add docs
+git commit -m "Website update on $(date)"
 
 echo
-echo "Done! You can commit now."
+echo "Done!"
